@@ -4,7 +4,7 @@ function getAndPrintHTML (options) {
   var https = require('https');
   var output = '';
 
-  https.get(options, function (response) {
+  https.get(options, response => {
     response.on('data', function (data) {
       output += data;
     });

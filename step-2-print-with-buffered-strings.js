@@ -8,7 +8,7 @@ function getAndPrintHTMLChunks () {
   var https = require('https');
   var output = '';
 
-  https.get(requestOptions, function (response) {
+  https.get(requestOptions, response => {
     response.on('data', function (data) {
       output += data;
     });
