@@ -7,7 +7,7 @@ function getAndPrintHTMLChunks () {
   /* Add your code here */
   var https = require('https');
   https.get(requestOptions, response => {
-    response.on('data', function (data) {
+    response.on('data', data => {
       console.log(data + '\n');
     })
   })
