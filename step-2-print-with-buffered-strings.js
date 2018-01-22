@@ -6,10 +6,15 @@ function getAndPrintHTMLChunks () {
 
   /* Add your code here */
   var https = require('https');
+  var output = '';
+
   https.get(requestOptions, function (response) {
     response.on('data', function (data) {
-      console.log(data + '\n');
-    })
+      output += data;
+    });
+    response.on('end', function () {
+      console.log(output);
+    });
   })
 }
 
